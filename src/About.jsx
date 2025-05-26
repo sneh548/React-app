@@ -1,5 +1,11 @@
- const About = ( )=> {
-  return <div>about</div>;
-};
+function About() {
+  return (
+    <>
+      <div className='text-red p-10 m-2 font-bold underline '>
+        About Section
+      </div>
+    </>
+  )
+}
 
-export default About;
+export default About
