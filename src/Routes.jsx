@@ -4,7 +4,7 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom'
-import Home from './Home'
+import Service from './Service'
 import About from './About'
 import App from './App'
 // import List from './List' // Optional
@@ -14,7 +14,7 @@ const Routes = () => {
     createRoutesFromElements(
       <>
         <Route path='/' element={<App />}>
-          <Route path='home' element={<Home />} />
+          <Route path='service' element={<Service />} />
           <Route path='about' element={<About />} />
         </Route>
       </>

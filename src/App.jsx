@@ -1,5 +1,6 @@
 import { Outlet, Link, useLocation } from 'react-router-dom'
-import MusicPlayer from './components/musiclibrary.jsx'
+import Component from './components/Home.jsx'
+// import { Header } from './Header.jsx'
 
 const App = () => {
   const location = useLocation()
@@ -8,27 +9,47 @@ const App = () => {
 
   return (
     <div className='content-center items-center text-2xl'>
-      <div className='flex justify-between flex-col'>
-        <div>
-          <h1 className='text-center'>My App Layout</h1>
-          <h2 className='text-center'>First landing page</h2>
-        </div>
-        <div className='item-center flex flex-row justify-between m-2 p-3'>
-          <div>
-            <Link to='home'>
-              <button>Home</button>
-            </Link>
+      {/* <Header /> */}
+      <header className='bg-white shadow-sm border-b'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+          <div className='flex justify-between items-center py-4'>
+            <div className='flex items-center'>
+              <h1 className='text-2xl font-bold text-gray-900'>Brand</h1>
+            </div>
+            <nav className='hidden md:flex space-x-8'>
+              <Link
+                to='/'
+                className='text-gray-600 hover:text-gray-900 transition-colors'
+              >
+                Home
+              </Link>
+              <Link
+                to='about'
+                className='text-gray-600 hover:text-gray-900 transition-colors'
+              >
+                About
+              </Link>
+              <Link
+                to='service'
+                className='text-gray-600 hover:text-gray-900 transition-colors'
+              >
+                Services
+              </Link>
+              <Link
+                to=''
+                className='text-gray-600 hover:text-gray-900 transition-colors'
+              >
+                Contact
+              </Link>
+            </nav>
+            <button className='bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors'>
+              Get Started
+            </button>
           </div>
-          <div>
-            <Link to='about'>
-              <button>About</button>
-            </Link>
-          </div>
         </div>
-      </div>
-      <hr />
+      </header>
       <Outlet />
-      {showMusicPlayer && <MusicPlayer />} {/* Only on /app */}
+      {showMusicPlayer && <Component />} {/* Only on /app */}
     </div>
   )
 }
