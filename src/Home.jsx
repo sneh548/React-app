@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <>
       {/* <Routes/> */}
-      <h1>homepage</h1>
+      <div className='text-red p-10 m-2 font-bold underline '>Home page</div>
     </>
   )
 }
