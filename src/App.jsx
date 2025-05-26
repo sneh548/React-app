@@ -1,16 +1,27 @@
-// import Home from "./Home"
+
 // import Routes from "./Routes"
 
-import {Home} from "./Home"
+// import Home from "./Home"
 
-function App( ){
-    return(
-        <>
-        {/* <Home/> */}
-        {/* <Routes/> */}
-        <h1>Hello this is me .</h1>
-        </>
-    )
-      
-    }
-export default App
+// export default function App() {
+//   return <>
+//   <h1>Hello World!</h1>
+// <Home/>
+// <Routes/>
+//   </>
+// }
+
+
+import { RouterProvider } from "react-router-dom";
+import router from "./Routes";
+// import Navbar from "./components/Navbar"
+
+
+export default function App() {
+  return (
+    <>
+      {/* <Navbar/> */}
+      <RouterProvider router={router} />
+    </>
+  );
+}

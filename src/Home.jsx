@@ -3,7 +3,7 @@ import Routes from "./Routes"
 const Home = () => {
   return (
     <>
-    <Routes/>
+    {/* <Routes/> */}
     <h1>homepage</h1>
     </>
   )

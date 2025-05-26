@@ -1,13 +1,13 @@
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <nav>
+    <>
+      <nav>
         <ul>
-            <Li>Home</Li>
-            <li>About</li>
-            <li>Contact</li>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
         </ul>
-    </nav>
+      </nav>
+    </>
   );
 };
-
-export default Navbar;
