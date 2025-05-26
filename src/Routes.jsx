@@ -12,11 +12,12 @@ import App from './App'
 const Routes = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={<App />}>
-        <Route path='home' element={<Home />} />
-        <Route path='about' element={<About />} />
-        {/* <Route path='list' element={<List />} /> */}
-      </Route>
+      <>
+        <Route path='/' element={<App />}>
+          <Route path='home' element={<Home />} />
+          <Route path='about' element={<About />} />
+        </Route>
+      </>
     )
   )
 

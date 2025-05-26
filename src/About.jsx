@@ -1,6 +1,10 @@
 function About() {
   return (
-    <div className='text-red p-10 m-2 font-bold underline '>About Section</div>
+    <>
+      <div className='text-red p-10 m-2 font-bold underline '>
+        About Section
+      </div>
+    </>
   )
 }
 
