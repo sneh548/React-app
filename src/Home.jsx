@@ -1,13 +1,12 @@
-import Routes from "./Routes"
+// import Routes from './Routes'
 
 const Home = () => {
   return (
     <>
-    <Routes/>
-    <h1>homepage</h1>
+      {/* <Routes/> */}
+      <h1>homepage</h1>
     </>
   )
-
 }
 
-export default Home;
+export default Home

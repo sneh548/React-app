@@ -1,16 +1,16 @@
-// import Home from "./Home"
-// import Routes from "./Routes"
+import { Outlet, Link } from 'react-router-dom'
 
-import {Home} from "./Home"
+const App = () => {
+  return (
+    <div>
+      <h1>My App Layout</h1>
+      <nav>
+        <Link to='home'>Home</Link> | <Link to='about'>About</Link>
+      </nav>
+      <hr />
+      <Outlet /> {/* This is where nested routes will render */}
+    </div>
+  )
+}
 
-function App( ){
-    return(
-        <>
-        {/* <Home/> */}
-        {/* <Routes/> */}
-        <h1>Hello this is me .</h1>
-        </>
-    )
-      
-    }
 export default App
