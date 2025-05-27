@@ -1,11 +1,18 @@
-import Routes from "./Routes"
+// import Navbar from "./components/Navbar";
+// import Routes from "./Routes"
+
+import Header from "./components/Header";
 
 const Home = () => {
   return (
-    <>
-    {/* <Routes/> */}
-    <h1>homepage</h1>
-    </>
+    <section>
+      
+       <h1>homepage</h1>
+     
+    </section>
+   
+   
+    
   )
 
 }
