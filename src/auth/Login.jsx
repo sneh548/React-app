@@ -1,10 +1,9 @@
+import LoginForm from "../components/Auth/LoginForm";
 
 const Login = () =>{
-  return (
-    <div>
-      login
-    </div>
-  )
+  return <section>
+    <LoginForm/>
+  </section>
 };
 
 export default Login;

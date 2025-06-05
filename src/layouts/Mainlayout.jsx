@@ -6,7 +6,7 @@ const Mainlayout = () => {
     <div>
       <Header />
       <Outlet />
-      <h1 className="mt-8">this is the main layout</h1>
+      <h1 className="mt-8"></h1>
     </div>
   );
 };

@@ -25,13 +25,41 @@ import {
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
-import { ABOUT_ROUTE, CONTACT_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE } from "./constants/routes";
+import {
+  ABOUT_ROUTE,
+  CONTACT_ROUTE,
+  LOGIN_ROUTE,
+  PRODUCTS_ROUTE,
+  REGISTER_ROUTE,
+} from "./constants/routes";
 import Mainlayout from "./layouts/Mainlayout";
 import Login from "./auth/Login";
 import Register from "./auth/register";
 import Productlist from "./products/Productlist";
 import ProductDetails from "./products/ProductDetail";
 
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route element={<Mainlayout />}>
+//       <Route index element={<Home />} />
+//       <Route path={ABOUT_ROUTE} element={<About />} />
+//       <Route path={CONTACT_ROUTE} element={<Contact />} />
+//       <Route path={LOGIN_ROUTE} element={<Login />} />
+//       <Route path={REGISTER_ROUTE} element={<Register />} />
+//       <Route path={PRODUCTS_ROUTE}>
+  
+//   <Route path="/products">
+//     <Route index element={<Productlist />} />
+//     <Route path=":id" element={<ProductDetails />} />
+//   </Route>
+
+
+
+//     </Route>
+//   )
+// );
+
+// export default router;
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Mainlayout />}>
@@ -40,10 +68,15 @@ const router = createBrowserRouter(
       <Route path={CONTACT_ROUTE} element={<Contact />} />
       <Route path={LOGIN_ROUTE} element={<Login />} />
       <Route path={REGISTER_ROUTE} element={<Register />} />
-      <Route path={"/products"} element={<Productlist />} />
-      <Route path={"/products/:id"} element={<ProductDetails />} />
+
+      <Route path={PRODUCTS_ROUTE}>
+        <Route index element={<Productlist />} />
+        <Route path=":id" element={<ProductDetails />} />
+      </Route>
+
     </Route>
   )
-)
+);
 
 export default router;
+

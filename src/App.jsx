@@ -59,15 +59,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products">
+          <Route index element={<Productlist />} />
+          <Route path=":id" element={<ProductDetails />} />
+        </Route>
         </Route>
 
         {/* Auth routes (without Mainlayout) */}
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/register" element={<Register />} />
-      <Route path={"/products"} element={<Productlist/>} /> 
-      <Route path={"/products/:id"} element={<ProductDetails/>} />
-        {/* /* You can add a NotFound route too if you'd like  */}
-        {/* <Route path="*" element={<NotFound />} /> */}
+        
       </Routes>
     </BrowserRouter>
   );
@@ -75,3 +76,7 @@ function App() {
 
 export default App;
 
+{
+  /* <Route path={"/products"} element={<Productlist/>} /> 
+      <Route path={"/products/:id"} element={<ProductDetails/>}  */
+}
