@@ -62,11 +62,13 @@ function App() {
           <Route path="/products">
           <Route index element={<Productlist />} />
           <Route path=":id" element={<ProductDetails />} />
+
         </Route>
+        <Route path="/auth/login" element={<Login />} />
         </Route>
 
         {/* Auth routes (without Mainlayout) */}
-        <Route path="/auth/login" element={<Login />} />
+        {/* <Route path="/auth/login" element={<Login />} /> */}
         <Route path="/auth/register" element={<Register />} />
         
       </Routes>
