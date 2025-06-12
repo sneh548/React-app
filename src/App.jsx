@@ -49,30 +49,32 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Productlist from "./products/Productlist";
 import ProductDetails from "./products/ProductDetail";
+import { Provider } from "react-redux";
+import store from "./redux/storage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* Main layout routes */}
-        <Route element={<Mainlayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/products">
-          <Route index element={<Productlist />} />
-          <Route path=":id" element={<ProductDetails />} />
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          {/* Main layout routes */}
+          <Route element={<Mainlayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/products">
+              <Route index element={<Productlist />} />
+              <Route path=":id" element={<ProductDetails />} />
+            </Route>
+            <Route path="/auth/login" element={<Login />} />
+          </Route>
 
-        </Route>
-        <Route path="/auth/login" element={<Login />} />
-        </Route>
-
-        {/* Auth routes (without Mainlayout) */}
-        {/* <Route path="/auth/login" element={<Login />} /> */}
-        <Route path="/auth/register" element={<Register />} />
-        
-      </Routes>
-    </BrowserRouter>
+          {/* Auth routes (without Mainlayout) */}
+          {/* <Route path="/auth/login" element={<Login />} /> */}
+          <Route path="/auth/register" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

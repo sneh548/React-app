@@ -7,7 +7,7 @@
 
 // export default config;
 const config = {
-  apiBaseUrl: "http://localhost:5000/api/",
+  apiBaseUrl: "http://localhost:3000/api/",
   loginEndpoint: "auth/login",
 };
 

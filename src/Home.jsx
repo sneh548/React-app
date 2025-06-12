@@ -1,13 +1,19 @@
-// import Navbar from "./components/Navbar";
-// import Routes from "./Routes"
-
-import Header from "./components/Header";
+import { useDispatch,useSelector } from "react-redux";
+import { decreaseCount, increaseCount } from "./redux/counter/counterSlice";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const {count} = useSelector((state) => state.counter);
+  function increaseCountValue() {
+    dispatch(increaseCount());
+  }
   return (
     <section>
       {/* <Header /> */}
        <h1>homepage</h1>
+       <p>count:{count}</p>
+       <button className="bg-red-500 text-white py-2 px-5" onClick={increaseCountValue}>+</button>
+      <button className="bg-blue-600 text-white py-2 px-5" onClick={()=>dispatch(decreaseCount())}>-</button>
      
     </section>
    

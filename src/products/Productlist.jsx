@@ -1,6 +1,6 @@
 // import React from 'react'
 
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 import { getProducts } from "../API/product";
 import ProductsCard from "../components/products/ProductsCard";
 import Title from "../components/Title";
