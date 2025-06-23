@@ -1,23 +1,29 @@
 // import Login from "../../auth/Login";
 import { useForm } from "react-hook-form";
 import { login } from "../../API/Auth";
+import { HOME_ROUTE } from "../../constants/routes";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/Auth/authSlice";
 
 const LoginForm = () => {
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
-  console.log(errors);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // console.log(data);
   function submitForm(data) {
     login(data)
       .then((response) => {
-        console.log("Login successful:", response.data);
+        console.log(response.data);
+        dispatch(setUser(response.data));
+        navigate(HOME_ROUTE);
         // You can add redirect or token storage here
       })
       .catch((error) => {
         if (error.response) {
-          console.log("Login error:", error.response.data);
+          console.log(error.response.data);
           // Show notification or alert with error.response.data.message if you have one
-        } else {
-          console.log("Network or unexpected error:", error.message);
         }
       });
   }

@@ -1,18 +1,25 @@
 // import React from 'react'
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getProducts } from "../API/product";
 import ProductsCard from "../components/products/ProductsCard";
 import Title from "../components/Title";
-// import Prod?uctsCard from ProductsCard"
+
 import products from "../data";
 
 const Productlist = () => {
-  
+  // const [products, setProducts] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/api/products")
+  //     .then((res) => res.json())
+  //     .then((data) => setProducts(data))
+  //     .catch((error) => console.error("Error fetching products:", error));
+  // }, []);
 
   useEffect(() => {
-getProducts();
-  } , []);
+    getProducts();
+  }, []);
   return (
     <section className="py-12">
       <div className="max-w-screen-xl max-auto px-4">

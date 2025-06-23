@@ -51,36 +51,46 @@ import Productlist from "./products/Productlist";
 import ProductDetails from "./products/ProductDetail";
 import { Provider } from "react-redux";
 import store from "./redux/storage";
+import { useEffect, useState } from "react";
 
 function App() {
-  return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          {/* Main layout routes */}
-          <Route element={<Mainlayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/products">
-              <Route index element={<Productlist />} />
-              <Route path=":id" element={<ProductDetails />} />
-            </Route>
-            <Route path="/auth/login" element={<Login />} />
-          </Route>
+  const [products, setProducts] = useState([]);
 
-          {/* Auth routes (without Mainlayout) */}
-          {/* <Route path="/auth/login" element={<Login />} /> */}
-          <Route path="/auth/register" element={<Register />} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
+// useEffect(() => {
+//   fetch("http://localhost:3000/api/products")
+//     .then((res) => res.json())
+//     .then((data) => setProducts(data))
+//     .catch((error) => console.error("Error fetching products:", error));
+// }, []);
+
+  return (
+    <>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            {/* Main layout routes */}
+            <Route element={<Mainlayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/products">
+                <Route index element={<Productlist />} />
+                <Route path=":id" element={<ProductDetails />} />
+              </Route>
+              <Route path="/auth/login" element={<Login />} />
+            </Route>
+
+            {/* Auth routes (without Mainlayout) */}
+            {/* <Route path="/auth/login" element={<Login />} /> */}
+            <Route path="/auth/register" element={<Register />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
+      <div>
+        <h1>Frontend</h1>
+      </div>
+    </>
   );
 }
 
 export default App;
-
-{
-  /* <Route path={"/products"} element={<Productlist/>} /> 
-      <Route path={"/products/:id"} element={<ProductDetails/>}  */
-}

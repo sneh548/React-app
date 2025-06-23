@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseApiUrl = "https://node-20240823.vercel.app";
+const baseApiUrl = "https://api.pujakaitem.com";
 
 const getProducts = () => {
   const data = axios.get(`${baseApiUrl}/api/products`);
