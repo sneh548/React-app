@@ -52,36 +52,41 @@ import ProductDetails from "./products/ProductDetail";
 import { Provider } from "react-redux";
 import store from "./redux/storage";
 import AuthLayout from "./layouts/AuthLayout";
-
+import {
+  ABOUT_ROUTE,
+  CONTACT_ROUTE,
+  LOGIN_ROUTE,
+  PRODUCTS_ROUTE,
+  REGISTER_ROUTE,
+} from "./constants/routes";
 
 function App() {
-  
-
   return (
     <>
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            {/* Main layout routes */}
+            {/* Routes with Mainlayout */}
             <Route element={<Mainlayout />}>
-            <Route element={<AuthLayout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/products">
-                <Route index element={<Productlist />} />
-                <Route path=":id" element={<ProductDetails />} />
+              {/* Routes with AuthLayout inside Mainlayout */}
+              <Route element={<AuthLayout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/products">
+                  <Route index element={<Productlist />} />
+                  <Route path=":id" element={<ProductDetails />} />
+                </Route>
               </Route>
-              {/* <Route path="/auth/login" element={<Login />} /> */}
-            </Route>
             </Route>
 
-            {/* Auth routes (without Mainlayout) */}
+            {/* Auth routes (no Mainlayout) */}
             <Route path="/auth/login" element={<Login />} />
             <Route path="/auth/register" element={<Register />} />
           </Routes>
         </BrowserRouter>
       </Provider>
+
       <div>
         <h1>Frontend</h1>
       </div>

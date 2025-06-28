@@ -12,3 +12,18 @@ const Mainlayout = () => {
 };
 
 export default Mainlayout;
+// import { Outlet } from "react-router-dom";
+
+// const Mainlayout = () => {
+//   return (
+//     <div>
+//       <header>Header here</header>
+//       <main>
+//         <Outlet />
+//       </main>
+//       <footer>Footer here</footer>
+//     </div>
+//   );
+// };
+
+// export default Mainlayout;
